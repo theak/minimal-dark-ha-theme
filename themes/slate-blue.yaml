@@ -496,6 +496,19 @@ Slate Blue:
   graph-color-13: var(--slate-sapphire)
   graph-color-14: var(--slate-flamingo)
 
+  ############
+  # card-mod #
+  ############
+  # Optional: with card-mod installed, button card labels get the same 14px medium weight as
+  # tile names and card headings instead of 16px regular. Ignored without card-mod.
+  card-mod-theme: Slate Blue
+  card-mod-card: |
+    ha-card[role="button"] > span:not(.state) {
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: -0.006em;
+    }
+
   # Inform Home Assistant that this is a single-mode theme.
   modes:
     dark: {}

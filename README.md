@@ -50,6 +50,12 @@ but can't load them, so to use Inter:
        - /local/fonts/inter.js
    ```
 
+## Optional: card-mod
+
+With [card-mod](https://github.com/thomasloven/lovelace-card-mod) installed, the theme also sets
+button card labels in 14px medium weight, matching tile names and card headings. Without it,
+that rule is ignored.
+
 ## Credits
 
 Built on [Catppuccin for Home Assistant](https://github.com/catppuccin/home-assistant) (MIT),
