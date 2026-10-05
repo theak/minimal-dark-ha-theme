@@ -51,12 +51,12 @@ Slate Blue:
   slate-surface1-rgb: 54, 55, 58
   slate-surface0: "#26282b"
   slate-surface0-rgb: 38, 40, 43
-  slate-base: "#191a1c"
-  slate-base-rgb: 25, 26, 28
-  slate-mantle: "#161718"
-  slate-mantle-rgb: 22, 23, 24
-  slate-crust: "#121314"
-  slate-crust-rgb: 18, 19, 20
+  slate-base: "#17181a"
+  slate-base-rgb: 23, 24, 26
+  slate-mantle: "#0e0f10"
+  slate-mantle-rgb: 14, 15, 16
+  slate-crust: "#0e0f10"
+  slate-crust-rgb: 14, 15, 16
   slate-accent: "#1e90ff"
   slate-accent-rgb: 30, 144, 255
   slate-on: "#ff9f4a"
@@ -77,24 +77,24 @@ Slate Blue:
   ha-color-primary-30: rgb(78, 164, 248)
   ha-color-primary-40: rgb(30, 144, 255)
   ha-color-primary-50: rgb(29, 124, 217)
-  ha-color-primary-60: rgb(28, 105, 179)
-  ha-color-primary-70: rgb(28, 85, 142)
-  ha-color-primary-80: rgb(27, 65, 104)
-  ha-color-primary-90: rgb(26, 46, 66)
-  ha-color-primary-95: rgb(25, 36, 47)
+  ha-color-primary-60: rgb(28, 104, 179)
+  ha-color-primary-70: rgb(26, 84, 140)
+  ha-color-primary-80: rgb(25, 64, 102)
+  ha-color-primary-90: rgb(24, 44, 64)
+  ha-color-primary-95: rgb(24, 34, 45)
 
   # Neutral
   ha-color-neutral-05: rgb(213, 214, 216)
   ha-color-neutral-10: rgb(203, 204, 206)
   ha-color-neutral-20: rgb(183, 184, 186)
-  ha-color-neutral-30: rgb(164, 165, 167)
-  ha-color-neutral-40: rgb(144, 145, 147)
-  ha-color-neutral-50: rgb(124, 125, 127)
-  ha-color-neutral-60: rgb(104, 105, 107)
-  ha-color-neutral-70: rgb(84, 85, 87)
-  ha-color-neutral-80: rgb(65, 66, 68)
-  ha-color-neutral-90: rgb(45, 46, 48)
-  ha-color-neutral-95: rgb(35, 36, 38)
+  ha-color-neutral-30: rgb(163, 164, 166)
+  ha-color-neutral-40: rgb(143, 144, 146)
+  ha-color-neutral-50: rgb(123, 124, 126)
+  ha-color-neutral-60: rgb(103, 104, 106)
+  ha-color-neutral-70: rgb(83, 84, 86)
+  ha-color-neutral-80: rgb(63, 64, 66)
+  ha-color-neutral-90: rgb(43, 44, 46)
+  ha-color-neutral-95: rgb(33, 34, 36)
 
   # Orange
   ha-color-orange-05: rgb(209, 210, 233)
@@ -144,7 +144,7 @@ Slate Blue:
   #
   # Last synced from: https://github.com/home-assistant/frontend/blob/60c5888f6ba960e41c23396a389134191c567507/src/resources/theme/color/semantic.globals.ts
 
-  ha-color-focus: var(--ha-color-orange-60)
+  ha-color-focus: var(--ha-color-primary-40)
 
   # Text
   ha-color-text-primary: rgb(234, 235, 236)
@@ -154,9 +154,9 @@ Slate Blue:
   primary-font-family: "'Inter Variable', Inter, Roboto, Noto, sans-serif"
   paper-font-common-base_-_font-family: "'Inter Variable', Inter, Roboto, Noto, sans-serif"
   mdc-typography-font-family: "'Inter Variable', Inter, Roboto, Noto, sans-serif"
-  ha-color-text-secondary: var(--slate-text)
+  ha-color-text-secondary: var(--slate-overlay2)
   ha-color-text-disabled: var(--slate-overlay1)
-  ha-color-text-link: var(--slate-blue)
+  ha-color-text-link: var(--primary-text-color)
 
   # Border primary
   ha-color-border-primary-quiet: var(--ha-color-primary-90)
@@ -327,7 +327,7 @@ Slate Blue:
   darker-primary-color: var(--ha-color-primary-20)
   light-primary-color: var(--ha-color-primary-50)
   accent-color: var(--primary-color)
-  divider-color: rgba(var(--slate-overlay1-rgb), 0.15)
+  divider-color: rgba(255, 255, 255, 0.06)
   outline-color: var(--slate-crust)
   outline-hover-color: var(--slate-surface2)
 
@@ -335,7 +335,7 @@ Slate Blue:
   rgb-primary-color: var(--slate-accent-rgb)
   rgb-accent-color: var(--slate-accent-rgb)
   rgb-primary-text-color: 234, 235, 236
-  rgb-secondary-text-color: var(--slate-text-rgb)
+  rgb-secondary-text-color: var(--slate-overlay2-rgb)
   rgb-text-primary-color: var(--slate-text-rgb)
   rgb-card-background-color: var(--slate-base-rgb)
 
@@ -344,7 +344,7 @@ Slate Blue:
   rgb-success-color: var(--slate-green-rgb)
   rgb-info-color: var(--slate-blue-rgb)
 
-  scrollbar-thumb-color: var(--primary-color)
+  scrollbar-thumb-color: rgba(255, 255, 255, 0.14)
 
   error-color: var(--slate-red)
   warning-color: var(--slate-yellow)
@@ -357,11 +357,21 @@ Slate Blue:
   secondary-background-color: var(--slate-mantle)
   clear-background-color: var(--card-background-color)
 
+  # Cards are separated from the page by value; the border is only a hairline
+  ha-card-border-radius: 16px
+  ha-card-border-width: 1px
+  ha-card-border-color: rgba(255, 255, 255, 0.06)
+  ha-card-box-shadow: none
+
   # For label-badge
   label-badge-grey: var(--secondary-text-color)
 
   # States icon
-  state-icon-color: var(--primary-color)
+  # Icons are grey at rest so the orange "on" color is the one that stands out
+  state-icon-color: var(--slate-overlay1)
+  paper-item-icon-color: var(--slate-overlay1)
+  state-sensor-battery-high-color: var(--slate-overlay1)
+  weather-icon-sun-color: "#e3bd62"
 
   # Energy
   energy-grid-consumption-color: var(--slate-lavender)
@@ -414,19 +424,25 @@ Slate Blue:
   input-dropdown-icon-color: var(--secondary-text-color)
 
   # State color
-  # "on" is a bold orange so active things stand out from the blue default icons
+  # "on" is a bold orange, the one icon color that means something is active
   state-active-color: var(--slate-on)
   state-light-active-color: var(--slate-on)
   state-switch-active-color: var(--slate-on)
   state-input_boolean-active-color: var(--slate-on)
 
-  sidebar-background-color: var(--slate-crust)
+  # The sidebar and header share the page color so the chrome recedes
+  sidebar-background-color: var(--primary-background-color)
+  sidebar-icon-color: var(--slate-overlay1)
+  sidebar-text-color: var(--slate-subtext0)
+  sidebar-selected-icon-color: var(--slate-text)
+  sidebar-selected-text-color: var(--primary-text-color)
   switch-unchecked-color: var(--slate-overlay0)
   switch-unchecked-button-color: var(--switch-unchecked-color)
   switch-unchecked-track-color: var(--switch-unchecked-color)
 
   app-header-text-color: var(--primary-text-color)
-  app-header-background-color: var(--slate-crust)
+  app-header-background-color: var(--primary-background-color)
+  app-header-border-bottom: none
 
   # Codemirror
   codemirror-keyword: var(--slate-mauve)
@@ -458,7 +474,7 @@ Slate Blue:
   app-header-edit-background-color: var(--slate-surface2)
   app-header-edit-text-color: var(--primary-text-color)
 
-  mdc-ripple-color: '#aaaaaa'
+  mdc-ripple-color: rgba(255, 255, 255, 0.5)
   mdc-linear-progress-buffer-color: var(--slate-surface1)
 
   ##########

@@ -1,15 +1,15 @@
 # Slate Blue
 
 A neutral dark theme for Home Assistant: near-black slate backgrounds, crisp light text, and a
-dodger-blue (`#1E90FF`) accent, with
-bold orange (`#FF9F4A`) for things that are on.
+dodger-blue (`#1E90FF`) accent. Icons are grey at rest, so bold orange (`#FF9F4A`) is the one
+color that means something is on.
 
 | | |
 |---|---|
-| Page background | `#161718` |
-| Cards and dialogs | `#191a1c` |
-| Sidebar and header | `#121314` |
-| Accent | `#1E90FF` |
+| Page, sidebar and header | `#0e0f10` |
+| Cards and dialogs | `#17181a`, 16 px corners, hairline border |
+| Secondary text and icons at rest | `#9ea2a7` / `#888c93` |
+| Accent (buttons, focus, selection) | `#1E90FF` |
 | On state (lights, switches) | `#FF9F4A` |
 | Font | Inter (falls back to Roboto) |
 
