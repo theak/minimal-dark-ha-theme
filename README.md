@@ -43,9 +43,12 @@ but can't load them, so to use Inter:
 
 ## Optional: card-mod
 
-With [card-mod](https://github.com/thomasloven/lovelace-card-mod) installed, the theme also sets
-button card labels in 14px medium weight, matching tile names and card headings. Without it,
-that rule is ignored.
+With [card-mod](https://github.com/thomasloven/lovelace-card-mod) installed, the theme also:
+
+- sets button card labels in 14px medium weight, matching tile names and card headings;
+- rounds the to-do list's "Add item" field like the cards and removes its underline.
+
+Without card-mod, these rules are ignored.
 
 ## Credits
 

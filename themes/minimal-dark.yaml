@@ -356,10 +356,12 @@ Minimal Dark:
   clear-background-color: var(--card-background-color)
 
   # Cards are separated from the page by value; the border is only a hairline
-  ha-card-border-radius: 16px
+  ha-card-border-radius: 20px
   ha-card-border-width: 1px
   ha-card-border-color: rgba(255, 255, 255, 0.06)
   ha-card-box-shadow: none
+  # A little more room between cards stacked in a section (HA default 8px)
+  ha-section-grid-row-gap: 12px
 
   # For label-badge
   label-badge-grey: var(--secondary-text-color)
@@ -499,14 +501,28 @@ Minimal Dark:
   ############
   # card-mod #
   ############
-  # Optional: with card-mod installed, button card labels get the same 14px medium weight as
-  # tile names and card headings instead of 16px regular. Ignored without card-mod.
+  # Optional, ignored without card-mod:
+  # - Button card labels get the same 14px medium weight as tile names and card headings
+  #   instead of 16px regular.
+  # - The to-do list's "Add item" field is rounded like the cards, with no underline at rest
+  #   or on focus. Its styles live in ha-input's shadow DOM, so they're reached through the
+  #   variables it reads; the add button gets the real accent back. (card-mod-card-yaml would
+  #   allow shadow DOM selectors, but card-mod 4.2.1 can't load theme YAML on HA 2026.8.)
   card-mod-theme: Minimal Dark
   card-mod-card: |
     ha-card[role="button"] > span:not(.state) {
       font-size: 14px;
       font-weight: 500;
       letter-spacing: -0.006em;
+    }
+    .addRow ha-input {
+      --ha-border-radius-sm: var(--ha-card-border-radius);
+      --ha-border-radius-square: var(--ha-card-border-radius);
+      --ha-color-border-neutral-loud: transparent;
+      --primary-color: transparent;
+    }
+    .addRow ha-input > * {
+      --primary-color: var(--slate-accent);
     }
 
   # Inform Home Assistant that this is a single-mode theme.
