@@ -1,7 +1,7 @@
-# Slate Blue — a neutral dark Home Assistant theme with a dodger-blue (#1E90FF) accent.
-# https://github.com/theak/slate-blue-ha-theme
+# Minimal Dark — a sleek, minimal dark mode theme for Home Assistant.
+# https://github.com/theak/minimal-dark-ha-theme
 # Derived from Catppuccin for Home Assistant (MIT, https://github.com/catppuccin/home-assistant).
-Slate Blue:
+Minimal Dark:
   #####################
   #   Slate palette  #
   #####################
@@ -501,7 +501,7 @@ Slate Blue:
   ############
   # Optional: with card-mod installed, button card labels get the same 14px medium weight as
   # tile names and card headings instead of 16px regular. Ignored without card-mod.
-  card-mod-theme: Slate Blue
+  card-mod-theme: Minimal Dark
   card-mod-card: |
     ha-card[role="button"] > span:not(.state) {
       font-size: 14px;

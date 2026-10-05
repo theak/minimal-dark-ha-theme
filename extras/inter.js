@@ -1,5 +1,5 @@
 // Registers the self-hosted Inter variable font for the whole frontend (loaded via
-// frontend.extra_module_url). Themes can only name fonts, not load them; Slate Blue then sets
+// frontend.extra_module_url). Themes can only name fonts, not load them; Minimal Dark then sets
 // --ha-font-family-* to "Inter Variable".
 const faces = [
   {

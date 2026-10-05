@@ -6,15 +6,15 @@ Sleek, minimal, dark mode theme for Home Assistant:
 
 ## Install with HACS
 
-1. HACS → ⋮ → **Custom repositories** → add `https://github.com/theak/slate-blue-ha-theme`
+1. HACS → ⋮ → **Custom repositories** → add `https://github.com/theak/minimal-dark-ha-theme`
    with type **Theme**.
-2. Download **Slate Blue**, then run the `frontend.reload_themes` action (or restart).
-3. Pick **Slate Blue** under your profile → **Theme**, or make it the default for everyone:
+2. Download **Minimal Dark**, then run the `frontend.reload_themes` action (or restart).
+3. Pick **Minimal Dark** under your profile → **Theme**, or make it the default for everyone:
 
    ```yaml
    action: frontend.set_theme
    data:
-     name: Slate Blue
+     name: Minimal Dark
    ```
 
 HACS needs themes enabled in `configuration.yaml`:
