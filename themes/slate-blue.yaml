@@ -382,6 +382,7 @@ Slate Blue:
   energy-water-color: var(--slate-sky)
 
   # Color
+  # HA's named colors collapse to one yellow (slate-yellow) and one blue (slate-accent)
   disabled-color: var(--slate-overlay1)
   red-color: var(--slate-red)
   pink-color: var(--slate-pink)
@@ -389,7 +390,7 @@ Slate Blue:
   deep-purple-color: var(--slate-mauve)
   indigo-color: var(--slate-lavender)
   blue-color: var(--slate-accent)
-  light-blue-color: var(--slate-sky)
+  light-blue-color: var(--slate-accent)
   cyan-color: var(--slate-teal)
   teal-color: var(--slate-teal)
   green-color: var(--slate-green)
@@ -397,7 +398,7 @@ Slate Blue:
   lime-color: var(--slate-green)
   yellow-color: var(--slate-yellow)
   amber-color: var(--slate-yellow)
-  orange-color: var(--slate-peach)
+  orange-color: var(--slate-yellow)
   deep-orange-color: var(--slate-maroon)
   brown-color: var(--slate-flamingo)
   light-grey-color: var(--slate-surface0)

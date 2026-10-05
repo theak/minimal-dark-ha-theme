@@ -15,9 +15,10 @@ const faces = [
 ];
 
 const style = document.createElement("style");
-style.textContent = faces
-  .map(
-    (f) => `@font-face {
+style.textContent =
+  faces
+    .map(
+      (f) => `@font-face {
   font-family: "Inter Variable";
   font-style: normal;
   font-display: swap;
@@ -25,6 +26,13 @@ style.textContent = faces
   src: url("/local/fonts/${f.file}") format("woff2-variations");
   unicode-range: ${f.range};
 }`
-  )
-  .join("\n");
+    )
+    .join("\n") +
+  // HA's index.html hard-codes Roboto on body, which the sidebar inherits. Inter also reads
+  // better slightly tightened (its recommended tracking at 16px); both inherit into cards.
+  `
+body {
+  font-family: var(--ha-font-family-body, Roboto, Noto, sans-serif);
+  letter-spacing: -0.011em;
+}`;
 document.head.appendChild(style);
