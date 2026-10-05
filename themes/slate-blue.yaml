@@ -19,8 +19,8 @@ Slate Blue:
   slate-maroon-rgb: 235, 160, 172
   slate-peach: "#fab387"
   slate-peach-rgb: 250, 179, 135
-  slate-yellow: "#f9e2af"
-  slate-yellow-rgb: 249, 226, 175
+  slate-yellow: "#e3bd62"
+  slate-yellow-rgb: 227, 189, 98
   slate-green: "#a6e3a1"
   slate-green-rgb: 166, 227, 161
   slate-teal: "#94e2d5"
@@ -59,8 +59,6 @@ Slate Blue:
   slate-crust-rgb: 14, 15, 16
   slate-accent: "#1e90ff"
   slate-accent-rgb: 30, 144, 255
-  slate-on: "#ff9f4a"
-  slate-on-rgb: 255, 159, 74
 
   ################################
   # Home Assistant color palette #
@@ -342,14 +340,14 @@ Slate Blue:
   rgb-warning-color: var(--slate-yellow-rgb)
   rgb-error-color: var(--slate-red-rgb)
   rgb-success-color: var(--slate-green-rgb)
-  rgb-info-color: var(--slate-blue-rgb)
+  rgb-info-color: var(--slate-accent-rgb)
 
   scrollbar-thumb-color: rgba(255, 255, 255, 0.14)
 
   error-color: var(--slate-red)
   warning-color: var(--slate-yellow)
   success-color: var(--slate-green)
-  info-color: var(--slate-blue)
+  info-color: var(--slate-accent)
 
   # Backgrounds
   card-background-color: var(--slate-base)
@@ -371,7 +369,7 @@ Slate Blue:
   state-icon-color: var(--slate-overlay1)
   paper-item-icon-color: var(--slate-overlay1)
   state-sensor-battery-high-color: var(--slate-overlay1)
-  weather-icon-sun-color: "#e3bd62"
+  weather-icon-sun-color: var(--slate-yellow)
 
   # Energy
   energy-grid-consumption-color: var(--slate-lavender)
@@ -390,7 +388,7 @@ Slate Blue:
   purple-color: var(--slate-mauve)
   deep-purple-color: var(--slate-mauve)
   indigo-color: var(--slate-lavender)
-  blue-color: var(--slate-blue)
+  blue-color: var(--slate-accent)
   light-blue-color: var(--slate-sky)
   cyan-color: var(--slate-teal)
   teal-color: var(--slate-teal)
@@ -424,11 +422,12 @@ Slate Blue:
   input-dropdown-icon-color: var(--secondary-text-color)
 
   # State color
-  # "on" is a bold orange, the one icon color that means something is active
-  state-active-color: var(--slate-on)
-  state-light-active-color: var(--slate-on)
-  state-switch-active-color: var(--slate-on)
-  state-input_boolean-active-color: var(--slate-on)
+  # "on" uses the palette yellow (same as amber, binary sensors and the weather sun), the one
+  # icon color that means something is active
+  state-active-color: var(--slate-yellow)
+  state-light-active-color: var(--slate-yellow)
+  state-switch-active-color: var(--slate-yellow)
+  state-input_boolean-active-color: var(--slate-yellow)
 
   # The sidebar and header share the page color so the chrome recedes
   sidebar-background-color: var(--primary-background-color)
@@ -441,7 +440,8 @@ Slate Blue:
   switch-unchecked-track-color: var(--switch-unchecked-color)
 
   app-header-text-color: var(--primary-text-color)
-  app-header-background-color: var(--primary-background-color)
+  # Literal, not a var(): HA copies it into the web app manifest as theme_color
+  app-header-background-color: "#0e0f10"
   app-header-border-bottom: none
 
   # Codemirror
