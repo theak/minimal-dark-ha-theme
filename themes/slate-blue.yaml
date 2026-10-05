@@ -59,6 +59,8 @@ Slate Blue:
   slate-crust-rgb: 18, 19, 20
   slate-accent: "#1e90ff"
   slate-accent-rgb: 30, 144, 255
+  slate-on: "#ff9f4a"
+  slate-on-rgb: 255, 159, 74
 
   ################################
   # Home Assistant color palette #
@@ -412,7 +414,11 @@ Slate Blue:
   input-dropdown-icon-color: var(--secondary-text-color)
 
   # State color
-  state-active-color: var(--slate-accent)
+  # "on" is a bold orange so active things stand out from the blue default icons
+  state-active-color: var(--slate-on)
+  state-light-active-color: var(--slate-on)
+  state-switch-active-color: var(--slate-on)
+  state-input_boolean-active-color: var(--slate-on)
 
   sidebar-background-color: var(--slate-crust)
   switch-unchecked-color: var(--slate-overlay0)
