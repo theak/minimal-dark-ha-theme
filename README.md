@@ -1,7 +1,8 @@
 # Minimal Dark Mode Home Assistant Theme
 
 Sleek, minimal, dark mode theme for Home Assistant:
-<img width="1081" height="817" alt="image" src="https://github.com/user-attachments/assets/215400fd-add7-4f36-801b-1182c22fc9d7" />
+<img width="1239" height="799" alt="image" src="https://github.com/user-attachments/assets/8f714d68-0c71-48e0-b9ff-5a2294a59013" />
+
 
 
 
