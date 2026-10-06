@@ -25,22 +25,22 @@ frontend:
   themes: !include_dir_merge_named themes
 ```
 
-## Optional: the Inter font
+## Optional: the Google Sans font
 
-The theme asks for Inter and falls back to Roboto when it isn't loaded. Themes can choose fonts
-but can't load them, so to use Inter:
+The theme asks for Google Sans and falls back to Roboto when it isn't loaded. Themes can choose
+fonts but can't load them, so to use Google Sans:
 
-1. Download `inter-latin-wght-normal.woff2` and `inter-latin-ext-wght-normal.woff2` from
-   [@fontsource-variable/inter](https://cdn.jsdelivr.net/npm/@fontsource-variable/inter@5/files/)
-   into `/config/www/fonts/`.
-2. Copy [`extras/inter.js`](extras/inter.js) to `/config/www/fonts/inter.js`.
-3. Add it to `configuration.yaml` and restart:
+1. Copy [`extras/google-sans.js`](extras/google-sans.js) to `/config/www/google-sans.js`.
+2. Add it to `configuration.yaml` and restart:
 
    ```yaml
    frontend:
      extra_module_url:
-       - /local/fonts/inter.js
+       - /local/google-sans.js
    ```
+
+The font loads from Google Fonts, so each browser that opens Home Assistant contacts Google's
+servers. Without internet access, the theme falls back to Roboto.
 
 ## Optional: card-mod
 

@@ -51,10 +51,12 @@ Minimal Dark:
   slate-surface1-rgb: 54, 55, 58
   slate-surface0: "#26282b"
   slate-surface0-rgb: 38, 40, 43
-  slate-base: "#17181a"
-  slate-base-rgb: 23, 24, 26
-  slate-mantle: "#0e0f10"
-  slate-mantle-rgb: 14, 15, 16
+  slate-base: "#212224"
+  slate-base-rgb: 33, 34, 36
+  slate-mantle: "#18191a"
+  slate-mantle-rgb: 24, 25, 26
+  slate-sidebar: "#232425"
+  slate-sidebar-rgb: 35, 36, 37
   slate-crust: "#0e0f10"
   slate-crust-rgb: 14, 15, 16
   slate-accent: "#1e90ff"
@@ -146,12 +148,12 @@ Minimal Dark:
 
   # Text
   ha-color-text-primary: rgb(234, 235, 236)
-  ha-font-family-body: "'Inter Variable', Inter, Roboto, Noto, sans-serif"
-  ha-font-family-heading: "'Inter Variable', Inter, Roboto, Noto, sans-serif"
-  ha-font-family-longform: "'Inter Variable', Inter, Roboto, Noto, sans-serif"
-  primary-font-family: "'Inter Variable', Inter, Roboto, Noto, sans-serif"
-  paper-font-common-base_-_font-family: "'Inter Variable', Inter, Roboto, Noto, sans-serif"
-  mdc-typography-font-family: "'Inter Variable', Inter, Roboto, Noto, sans-serif"
+  ha-font-family-body: "'Google Sans', Roboto, Noto, sans-serif"
+  ha-font-family-heading: "'Google Sans', Roboto, Noto, sans-serif"
+  ha-font-family-longform: "'Google Sans', Roboto, Noto, sans-serif"
+  primary-font-family: "'Google Sans', Roboto, Noto, sans-serif"
+  paper-font-common-base_-_font-family: "'Google Sans', Roboto, Noto, sans-serif"
+  mdc-typography-font-family: "'Google Sans', Roboto, Noto, sans-serif"
   ha-color-text-secondary: var(--slate-overlay2)
   ha-color-text-disabled: var(--slate-overlay1)
   ha-color-text-link: var(--primary-text-color)
@@ -300,8 +302,9 @@ Minimal Dark:
   ha-color-on-surface-default: var(--ha-color-neutral-05)
 
   # Forms
-  ha-color-form-background: var(--ha-color-neutral-95)
-  ha-color-form-background-hover: var(--ha-color-neutral-90)
+  # One step up from HA's default: neutral-95 equals the card color, so fields would vanish on cards
+  ha-color-form-background: var(--ha-color-neutral-90)
+  ha-color-form-background-hover: var(--ha-color-neutral-80)
   ha-color-form-background-disabled: var(--ha-color-neutral-80)
 
   # Scrollable fade
@@ -355,11 +358,15 @@ Minimal Dark:
   secondary-background-color: var(--slate-mantle)
   clear-background-color: var(--card-background-color)
 
-  # Cards are separated from the page by value; the border is only a hairline
+  # Cards sit a step lighter than the page; the border is only a hairline
   ha-card-border-radius: 20px
   ha-card-border-width: 1px
   ha-card-border-color: rgba(255, 255, 255, 0.06)
-  ha-card-box-shadow: none
+  # A faint top highlight, a tight contact shadow and a soft drop shadow lift cards off the page
+  ha-card-box-shadow: >-
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 1px 2px rgba(0, 0, 0, 0.32),
+    0 6px 16px -4px rgba(0, 0, 0, 0.28)
   # A little more room between cards stacked in a section (HA default 8px)
   ha-section-grid-row-gap: 12px
 
@@ -432,8 +439,8 @@ Minimal Dark:
   state-switch-active-color: var(--slate-yellow)
   state-input_boolean-active-color: var(--slate-yellow)
 
-  # The sidebar and header share the page color so the chrome recedes
-  sidebar-background-color: var(--primary-background-color)
+  # The header shares the page color; the sidebar is a step lighter so it reads as its own panel
+  sidebar-background-color: var(--slate-sidebar)
   sidebar-icon-color: var(--slate-overlay1)
   sidebar-text-color: var(--slate-subtext0)
   sidebar-selected-icon-color: var(--slate-text)
@@ -444,7 +451,7 @@ Minimal Dark:
 
   app-header-text-color: var(--primary-text-color)
   # Literal, not a var(): HA copies it into the web app manifest as theme_color
-  app-header-background-color: "#0e0f10"
+  app-header-background-color: "#18191a"
   app-header-border-bottom: none
 
   # Codemirror
@@ -504,6 +511,8 @@ Minimal Dark:
   # Optional, ignored without card-mod:
   # - Button card labels get the same 14px medium weight as tile names and card headings
   #   instead of 16px regular.
+  # - Sidebar items, and their hover and selected highlights, get 10px corners instead of
+  #   HA's small radius, without rounding inputs elsewhere.
   # - The to-do list's "Add item" field is rounded like the cards, with no underline at rest
   #   or on focus. Its styles live in ha-input's shadow DOM, so they're reached through the
   #   variables it reads; the add button gets the real accent back. (card-mod-card-yaml would
@@ -523,6 +532,10 @@ Minimal Dark:
     }
     .addRow ha-input > * {
       --primary-color: var(--slate-accent);
+    }
+  card-mod-sidebar: |
+    :host {
+      --ha-border-radius-sm: 10px;
     }
 
   # Inform Home Assistant that this is a single-mode theme.
