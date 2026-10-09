@@ -518,6 +518,7 @@ Minimal Dark:
   #   HA's small radius, without rounding inputs elsewhere.
   # - Buttons and tiles shrink to 97% while pressed, so a tap visibly registers even when
   #   the state doesn't change (IR volume buttons, scripts).
+  # - Glance card states (Open, Closed) are secondary text, so names stay the focus.
   # - The to-do list's "Add item" field is rounded like the cards, with no underline at rest
   #   or on focus. Its styles live in ha-input's shadow DOM, so they're reached through the
   #   variables it reads; the add button gets the real accent back. (card-mod-card-yaml would
@@ -545,6 +546,10 @@ Minimal Dark:
     ha-card[role="button"]:active,
     :host(hui-tile-card) ha-card:active {
       transform: scale(0.97);
+    }
+  card-mod-glance: |
+    div:not(.name) {
+      color: var(--secondary-text-color);
     }
   card-mod-sidebar: |
     :host {
