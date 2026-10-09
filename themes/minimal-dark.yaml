@@ -367,8 +367,11 @@ Minimal Dark:
     inset 0 1px 0 rgba(255, 255, 255, 0.04),
     0 1px 2px rgba(0, 0, 0, 0.32),
     0 6px 16px -4px rgba(0, 0, 0, 0.28)
-  # A little more room between cards stacked in a section (HA default 8px)
+  # One 12px gap between cards everywhere: section rows and columns, and inside vertical and
+  # horizontal stacks (HA defaults 8px)
   ha-section-grid-row-gap: 12px
+  ha-section-grid-column-gap: 12px
+  stack-card-gap: 12px
   # Let sections view columns grow past HA's 500px so 2 sections fill a tablet
   ha-view-sections-column-max-width: 600px
   ha-view-sections-column-gap: 24px
