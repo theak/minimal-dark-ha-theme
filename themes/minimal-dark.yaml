@@ -521,6 +521,8 @@ Minimal Dark:
   #   HA's small radius, without rounding inputs elsewhere.
   # - Buttons and tiles shrink to 97% while pressed, so a tap visibly registers even when
   #   the state doesn't change (IR volume buttons, scripts).
+  # - Picture entity names (camera feeds) are a small frosted chip in the corner instead of
+  #   a full-width bar.
   # - Glance card states (Open, Closed) are secondary text, so names stay the focus.
   # - The to-do list's "Add item" field is rounded like the cards, with no underline at rest
   #   or on focus. Its styles live in ha-input's shadow DOM, so they're reached through the
@@ -549,6 +551,19 @@ Minimal Dark:
     ha-card[role="button"]:active,
     :host(hui-tile-card) ha-card:active {
       transform: scale(0.97);
+    }
+    :host(hui-picture-entity-card) .footer.single {
+      left: 10px;
+      right: auto;
+      bottom: 10px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background-color: rgba(0, 0, 0, 0.45);
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 16px;
     }
   card-mod-glance: |
     div:not(.name) {
